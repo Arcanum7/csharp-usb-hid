@@ -332,10 +332,10 @@ namespace GenericHid
             this.LstResults.ForeColor = System.Drawing.SystemColors.WindowText;
             this.LstResults.HorizontalScrollbar = true;
             this.LstResults.ItemHeight = 14;
-            this.LstResults.Location = new System.Drawing.Point(12, 424);
+            this.LstResults.Location = new System.Drawing.Point(495, 22);
             this.LstResults.Name = "LstResults";
             this.LstResults.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.LstResults.Size = new System.Drawing.Size(760, 326);
+            this.LstResults.Size = new System.Drawing.Size(295, 396);
             this.LstResults.TabIndex = 0;
             // 
             // fraInputReportBufferSize
@@ -414,7 +414,7 @@ namespace GenericHid
             // 
             // cmdFindDevice
             // 
-            this.cmdFindDevice.Location = new System.Drawing.Point(483, 37);
+            this.cmdFindDevice.Location = new System.Drawing.Point(344, 150);
             this.cmdFindDevice.Name = "cmdFindDevice";
             this.cmdFindDevice.Size = new System.Drawing.Size(136, 55);
             this.cmdFindDevice.TabIndex = 11;
@@ -461,7 +461,7 @@ namespace GenericHid
             this.fraControlTransfers.Location = new System.Drawing.Point(194, 128);
             this.fraControlTransfers.Name = "fraControlTransfers";
             this.fraControlTransfers.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.fraControlTransfers.Size = new System.Drawing.Size(277, 152);
+            this.fraControlTransfers.Size = new System.Drawing.Size(143, 152);
             this.fraControlTransfers.TabIndex = 15;
             this.fraControlTransfers.TabStop = false;
             this.fraControlTransfers.Text = "Control Transfers";
@@ -521,7 +521,7 @@ namespace GenericHid
             // 
             // FrmMain
             // 
-            this.ClientSize = new System.Drawing.Size(784, 756);
+            this.ClientSize = new System.Drawing.Size(802, 426);
             this.Controls.Add(this.fraSendAndGetContinuous);
             this.Controls.Add(this.fraControlTransfers);
             this.Controls.Add(this.cmdFindDevice);
