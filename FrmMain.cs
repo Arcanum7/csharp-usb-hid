@@ -197,10 +197,8 @@ namespace GenericHid
 		private Button cmdGetInputReportControl;
         public GroupBox fraControlTransfers;
 		private Button cmdPeriodicTransfers;
-		public GroupBox fraSendAndGetContinuous;
-		private RadioButton radFeature;
-		private RadioButton radInputOutputControl;
-        private RadioButton radInputOutputInterrupt;
+        public GroupBox fraSendAndGetContinuous;
+        private RadioButton radInputOutputControl;
 
 		[System.Diagnostics.DebuggerStepThrough()]
 		private void InitializeComponent()
@@ -228,9 +226,7 @@ namespace GenericHid
             this.cmdGetInputReportControl = new System.Windows.Forms.Button();
             this.fraControlTransfers = new System.Windows.Forms.GroupBox();
             this.fraSendAndGetContinuous = new System.Windows.Forms.GroupBox();
-            this.radFeature = new System.Windows.Forms.RadioButton();
             this.radInputOutputControl = new System.Windows.Forms.RadioButton();
-            this.radInputOutputInterrupt = new System.Windows.Forms.RadioButton();
             this.FraBytesReceived.SuspendLayout();
             this.FraBytesToSend.SuspendLayout();
             this.fraInputReportBufferSize.SuspendLayout();
@@ -423,7 +419,7 @@ namespace GenericHid
             // 
             // cmdPeriodicTransfers
             // 
-            this.cmdPeriodicTransfers.Location = new System.Drawing.Point(153, 36);
+            this.cmdPeriodicTransfers.Location = new System.Drawing.Point(17, 43);
             this.cmdPeriodicTransfers.Name = "cmdPeriodicTransfers";
             this.cmdPeriodicTransfers.Size = new System.Drawing.Size(118, 51);
             this.cmdPeriodicTransfers.TabIndex = 16;
@@ -469,55 +465,28 @@ namespace GenericHid
             // fraSendAndGetContinuous
             // 
             this.fraSendAndGetContinuous.BackColor = System.Drawing.SystemColors.Control;
-            this.fraSendAndGetContinuous.Controls.Add(this.radFeature);
             this.fraSendAndGetContinuous.Controls.Add(this.radInputOutputControl);
-            this.fraSendAndGetContinuous.Controls.Add(this.radInputOutputInterrupt);
             this.fraSendAndGetContinuous.Controls.Add(this.cmdPeriodicTransfers);
             this.fraSendAndGetContinuous.Font = new System.Drawing.Font("Arial", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.fraSendAndGetContinuous.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.fraSendAndGetContinuous.Location = new System.Drawing.Point(194, 296);
+            this.fraSendAndGetContinuous.Location = new System.Drawing.Point(146, 296);
             this.fraSendAndGetContinuous.Name = "fraSendAndGetContinuous";
             this.fraSendAndGetContinuous.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.fraSendAndGetContinuous.Size = new System.Drawing.Size(295, 112);
+            this.fraSendAndGetContinuous.Size = new System.Drawing.Size(151, 112);
             this.fraSendAndGetContinuous.TabIndex = 17;
             this.fraSendAndGetContinuous.TabStop = false;
             this.fraSendAndGetContinuous.Text = "Send and Get Continuous";
             // 
-            // radFeature
-            // 
-            this.radFeature.AutoSize = true;
-            this.radFeature.Location = new System.Drawing.Point(17, 76);
-            this.radFeature.Name = "radFeature";
-            this.radFeature.Size = new System.Drawing.Size(62, 18);
-            this.radFeature.TabIndex = 19;
-            this.radFeature.TabStop = true;
-            this.radFeature.Text = "Feature";
-            this.radFeature.UseVisualStyleBackColor = true;
-            this.radFeature.CheckedChanged += new System.EventHandler(this.radFeature_CheckedChanged);
-            // 
             // radInputOutputControl
             // 
             this.radInputOutputControl.AutoSize = true;
-            this.radInputOutputControl.Location = new System.Drawing.Point(17, 52);
+            this.radInputOutputControl.Location = new System.Drawing.Point(10, 19);
             this.radInputOutputControl.Name = "radInputOutputControl";
             this.radInputOutputControl.Size = new System.Drawing.Size(120, 18);
             this.radInputOutputControl.TabIndex = 18;
             this.radInputOutputControl.TabStop = true;
             this.radInputOutputControl.Text = "Input Output Control";
             this.radInputOutputControl.UseVisualStyleBackColor = true;
-            this.radInputOutputControl.CheckedChanged += new System.EventHandler(this.radInputOutputControl_CheckedChanged);
-            // 
-            // radInputOutputInterrupt
-            // 
-            this.radInputOutputInterrupt.AutoSize = true;
-            this.radInputOutputInterrupt.Location = new System.Drawing.Point(17, 28);
-            this.radInputOutputInterrupt.Name = "radInputOutputInterrupt";
-            this.radInputOutputInterrupt.Size = new System.Drawing.Size(126, 18);
-            this.radInputOutputInterrupt.TabIndex = 17;
-            this.radInputOutputInterrupt.TabStop = true;
-            this.radInputOutputInterrupt.Text = "Input Output Interrupt";
-            this.radInputOutputInterrupt.UseVisualStyleBackColor = true;
-            this.radInputOutputInterrupt.CheckedChanged += new System.EventHandler(this.radInputOutputInterrupt_CheckedChanged);
             // 
             // FrmMain
             // 
@@ -1507,8 +1476,7 @@ namespace GenericHid
 
 				FrmMy.CboByte0.SelectedIndex = 0;
 				FrmMy.CboByte1.SelectedIndex = 128;
-				FrmMy.radInputOutputInterrupt.Checked = true;
-
+				
 				//  Check the autoincrement box to increment the values each time a report is sent.
 
 				ChkAutoincrement.CheckState = CheckState.Checked;
@@ -1641,21 +1609,8 @@ namespace GenericHid
 		{
 			// Don't allow changing the transfer type while transfers are in progress.
 
-			if (radFeature.Checked)
-			{
-				radInputOutputControl.Enabled = false;
-				radInputOutputInterrupt.Enabled = false;
-			}
-			else if (radInputOutputControl.Checked)
-			{
-				radFeature.Enabled = false;
-				radInputOutputInterrupt.Enabled = false;
-			}
-			else if (radInputOutputInterrupt.Checked)
-			{
-				radFeature.Enabled = false;
-				radInputOutputControl.Enabled = false;
-			}
+			radInputOutputControl.Enabled = false;
+			
 
 			//  Change the command button's text.
 
@@ -1667,21 +1622,12 @@ namespace GenericHid
 
 			cmdPeriodicTransfers.Enabled = true;
 
-			if (radInputOutputInterrupt.Checked)
-			{
-				_transferType = TransferTypes.Interrupt;
-				_reportType = ReportTypes.Output;
-			}
-			else if (radInputOutputControl.Checked)
+			if (radInputOutputControl.Checked)
 			{
 				_transferType = TransferTypes.Control;
 				_reportType = ReportTypes.Output;
 			}
-			else if (radFeature.Checked)
-			{
-				_transferType = TransferTypes.Control;
-				_reportType = ReportTypes.Feature;
-			}
+			
 			_periodicTransfersRequested = true;
 			PeriodicTransfers();
 		}
@@ -1707,17 +1653,7 @@ namespace GenericHid
 
 			// Re-allow changing the transfer type.
 
-			radFeature.Enabled = true;
 			radInputOutputControl.Enabled = true;
-			radInputOutputInterrupt.Enabled = true;
-		}
-
-		private void radInputOutputControl_CheckedChanged(object sender, EventArgs e)
-		{
-		}
-
-		private void radInputOutputInterrupt_CheckedChanged(object sender, EventArgs e)
-		{
 		}
 
 		private void radFeature_CheckedChanged(object sender, EventArgs e)
