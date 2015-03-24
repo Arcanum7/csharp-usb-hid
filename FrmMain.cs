@@ -2223,7 +2223,7 @@ namespace GenericHid
 
 		private void Startup()
 		{
-			const Int32 periodicTransferInterval = 1000;
+			const Int32 periodicTransferInterval = 250;
 			try
 			{
 				_myHid = new Hid();
