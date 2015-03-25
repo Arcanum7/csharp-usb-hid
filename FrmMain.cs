@@ -173,9 +173,7 @@ namespace GenericHid
 
 		// Required by the Windows Form Designer
 		private System.ComponentModel.IContainer components;
-		public System.Windows.Forms.ToolTip ToolTip1;
-		public System.Windows.Forms.TextBox TxtBytesReceived;
-		public System.Windows.Forms.GroupBox FraBytesReceived;
+        public System.Windows.Forms.ToolTip ToolTip1;
 		public System.Windows.Forms.CheckBox ChkAutoincrement;
 		public System.Windows.Forms.ComboBox CboByte1;
 		public System.Windows.Forms.ComboBox CboByte0;
@@ -205,8 +203,6 @@ namespace GenericHid
 		{
             this.components = new System.ComponentModel.Container();
             this.ToolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.FraBytesReceived = new System.Windows.Forms.GroupBox();
-            this.TxtBytesReceived = new System.Windows.Forms.TextBox();
             this.FraBytesToSend = new System.Windows.Forms.GroupBox();
             this.ChkAutoincrement = new System.Windows.Forms.CheckBox();
             this.CboByte1 = new System.Windows.Forms.ComboBox();
@@ -227,42 +223,12 @@ namespace GenericHid
             this.fraControlTransfers = new System.Windows.Forms.GroupBox();
             this.fraSendAndGetContinuous = new System.Windows.Forms.GroupBox();
             this.radInputOutputControl = new System.Windows.Forms.RadioButton();
-            this.FraBytesReceived.SuspendLayout();
             this.FraBytesToSend.SuspendLayout();
             this.fraInputReportBufferSize.SuspendLayout();
             this.fraDeviceIdentifiers.SuspendLayout();
             this.fraControlTransfers.SuspendLayout();
             this.fraSendAndGetContinuous.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // FraBytesReceived
-            // 
-            this.FraBytesReceived.BackColor = System.Drawing.SystemColors.Control;
-            this.FraBytesReceived.Controls.Add(this.TxtBytesReceived);
-            this.FraBytesReceived.Font = new System.Drawing.Font("Arial", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FraBytesReceived.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.FraBytesReceived.Location = new System.Drawing.Point(16, 272);
-            this.FraBytesReceived.Name = "FraBytesReceived";
-            this.FraBytesReceived.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.FraBytesReceived.Size = new System.Drawing.Size(112, 136);
-            this.FraBytesReceived.TabIndex = 4;
-            this.FraBytesReceived.TabStop = false;
-            this.FraBytesReceived.Text = "Bytes Received";
-            // 
-            // TxtBytesReceived
-            // 
-            this.TxtBytesReceived.AcceptsReturn = true;
-            this.TxtBytesReceived.BackColor = System.Drawing.SystemColors.Window;
-            this.TxtBytesReceived.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.TxtBytesReceived.Font = new System.Drawing.Font("Arial", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtBytesReceived.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.TxtBytesReceived.Location = new System.Drawing.Point(18, 24);
-            this.TxtBytesReceived.MaxLength = 0;
-            this.TxtBytesReceived.Multiline = true;
-            this.TxtBytesReceived.Name = "TxtBytesReceived";
-            this.TxtBytesReceived.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.TxtBytesReceived.Size = new System.Drawing.Size(72, 96);
-            this.TxtBytesReceived.TabIndex = 5;
             // 
             // FraBytesToSend
             // 
@@ -328,7 +294,7 @@ namespace GenericHid
             this.LstResults.ForeColor = System.Drawing.SystemColors.WindowText;
             this.LstResults.HorizontalScrollbar = true;
             this.LstResults.ItemHeight = 14;
-            this.LstResults.Location = new System.Drawing.Point(495, 22);
+            this.LstResults.Location = new System.Drawing.Point(381, 16);
             this.LstResults.Name = "LstResults";
             this.LstResults.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.LstResults.Size = new System.Drawing.Size(295, 396);
@@ -338,16 +304,16 @@ namespace GenericHid
             // 
             this.fraInputReportBufferSize.Controls.Add(this.cmdInputReportBufferSize);
             this.fraInputReportBufferSize.Controls.Add(this.txtInputReportBufferSize);
-            this.fraInputReportBufferSize.Location = new System.Drawing.Point(248, 16);
+            this.fraInputReportBufferSize.Location = new System.Drawing.Point(230, 16);
             this.fraInputReportBufferSize.Name = "fraInputReportBufferSize";
-            this.fraInputReportBufferSize.Size = new System.Drawing.Size(208, 96);
+            this.fraInputReportBufferSize.Size = new System.Drawing.Size(145, 151);
             this.fraInputReportBufferSize.TabIndex = 9;
             this.fraInputReportBufferSize.TabStop = false;
             this.fraInputReportBufferSize.Text = "Input Report Buffer Size";
             // 
             // cmdInputReportBufferSize
             // 
-            this.cmdInputReportBufferSize.Location = new System.Drawing.Point(96, 32);
+            this.cmdInputReportBufferSize.Location = new System.Drawing.Point(16, 76);
             this.cmdInputReportBufferSize.Name = "cmdInputReportBufferSize";
             this.cmdInputReportBufferSize.Size = new System.Drawing.Size(96, 56);
             this.cmdInputReportBufferSize.TabIndex = 1;
@@ -410,7 +376,7 @@ namespace GenericHid
             // 
             // cmdFindDevice
             // 
-            this.cmdFindDevice.Location = new System.Drawing.Point(344, 150);
+            this.cmdFindDevice.Location = new System.Drawing.Point(194, 331);
             this.cmdFindDevice.Name = "cmdFindDevice";
             this.cmdFindDevice.Size = new System.Drawing.Size(136, 55);
             this.cmdFindDevice.TabIndex = 11;
@@ -454,7 +420,7 @@ namespace GenericHid
             this.fraControlTransfers.Controls.Add(this.cmdGetInputReportControl);
             this.fraControlTransfers.Font = new System.Drawing.Font("Arial", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.fraControlTransfers.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.fraControlTransfers.Location = new System.Drawing.Point(194, 128);
+            this.fraControlTransfers.Location = new System.Drawing.Point(187, 173);
             this.fraControlTransfers.Name = "fraControlTransfers";
             this.fraControlTransfers.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.fraControlTransfers.Size = new System.Drawing.Size(143, 152);
@@ -469,7 +435,7 @@ namespace GenericHid
             this.fraSendAndGetContinuous.Controls.Add(this.cmdPeriodicTransfers);
             this.fraSendAndGetContinuous.Font = new System.Drawing.Font("Arial", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.fraSendAndGetContinuous.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.fraSendAndGetContinuous.Location = new System.Drawing.Point(146, 296);
+            this.fraSendAndGetContinuous.Location = new System.Drawing.Point(16, 288);
             this.fraSendAndGetContinuous.Name = "fraSendAndGetContinuous";
             this.fraSendAndGetContinuous.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.fraSendAndGetContinuous.Size = new System.Drawing.Size(151, 112);
@@ -490,13 +456,12 @@ namespace GenericHid
             // 
             // FrmMain
             // 
-            this.ClientSize = new System.Drawing.Size(802, 426);
+            this.ClientSize = new System.Drawing.Size(690, 426);
             this.Controls.Add(this.fraSendAndGetContinuous);
             this.Controls.Add(this.fraControlTransfers);
             this.Controls.Add(this.cmdFindDevice);
             this.Controls.Add(this.fraDeviceIdentifiers);
             this.Controls.Add(this.fraInputReportBufferSize);
-            this.Controls.Add(this.FraBytesReceived);
             this.Controls.Add(this.FraBytesToSend);
             this.Controls.Add(this.LstResults);
             this.Font = new System.Drawing.Font("Arial", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -506,8 +471,6 @@ namespace GenericHid
             this.Text = "Generic HID Tester";
             this.Closed += new System.EventHandler(this.frmMain_Closed);
             this.Load += new System.EventHandler(this.frmMain_Load);
-            this.FraBytesReceived.ResumeLayout(false);
-            this.FraBytesReceived.PerformLayout();
             this.FraBytesToSend.ResumeLayout(false);
             this.fraInputReportBufferSize.ResumeLayout(false);
             this.fraInputReportBufferSize.PerformLayout();
@@ -1076,8 +1039,6 @@ namespace GenericHid
 				LstResults.Items.Add(" Report ID: " + String.Format("{0:X2} ", buffer[0]));
 				LstResults.Items.Add(" Report Data:");
 
-				TxtBytesReceived.Text = "";
-
 				for (count = 1; count <= buffer.Length - 1; count++)
 				{
 					//  Display bytes as 2-character Hex strings.
@@ -1086,10 +1047,6 @@ namespace GenericHid
 
 					LstResults.Items.Add(" " + byteValue);
 
-					//  Display the received bytes in the text box.
-
-					TxtBytesReceived.SelectionStart = TxtBytesReceived.Text.Length;
-					TxtBytesReceived.SelectedText = byteValue + Environment.NewLine;
 				}
 				ScrollToBottomOfListBox();
 			}
