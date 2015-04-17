@@ -2175,8 +2175,8 @@ namespace GenericHid
 
 				//  Default USB Vendor ID and Product ID:
 
-                txtVendorID.Text = "03eb";
-                txtProductID.Text = "204f";
+                txtVendorID.Text = "1209";
+                txtProductID.Text = "2222";
 
 				GetVendorAndProductIDsFromTextBoxes(ref _myVendorId, ref _myProductId);
 
